@@ -9,3 +9,4 @@ The .gitignore file was downloaded from https://github.com/github/gitignore/blob
 
 I have included "PlantUML.txt" which contains the UML. To produce the graphic use PlantUML Server located at URL "https://www.plantuml.com/plantuml/uml/"
 
+We will be using a value object paradigm throughout. See "ValueObjects" folder 

@@ -16,7 +16,7 @@ class Mage {
 }
 
 class Paladin {
-    +Headl(): int
+    +Heal(): int
 }
 
 Character <|-- Warrior
