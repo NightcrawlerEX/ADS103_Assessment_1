@@ -1,6 +1,7 @@
 public class Mage : Character
 {
-    public Mage(Name name) : base(name)
+    public Mage(Name name, HitPoints hitPoints, Strength strength, Defence defence) 
+    : base(name, hitPoints, strength, defence)
     {
 
     }//end constructor

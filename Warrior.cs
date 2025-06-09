@@ -1,8 +1,10 @@
 public class Warrior : Character
 {
-    public Warrior(Name name) : base(name)
+    private RagePoints _ragePoints;
+    public Warrior(Name name, HitPoints hitPoints, Strength strength, Defence defence, RagePoints ragePoints)
+    : base(name, hitPoints, strength, defence)
     {
-
+        _ragePoints = ragePoints;
     }//end constructor
 
     public int HeavySwing()

@@ -1,6 +1,7 @@
 public class Paladin : Warrior
 {
-    public Paladin(Name name) : base(name)
+    public Paladin(Name name, HitPoints hitPoints, Strength strength, Defence defence, RagePoints ragePoints) 
+    : base(name, hitPoints, strength, defence, ragePoints)
     {
 
     }//end constructor
