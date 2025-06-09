@@ -6,3 +6,6 @@ I have installed .NET 8.0 for this project
 This project was created via "dotnet new console"
 
 The .gitignore file was downloaded from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
+
+I have included "PlantUML.txt" which contains the UML. To produce the graphic use PlantUML Server located at URL "https://www.plantuml.com/plantuml/uml/"
+

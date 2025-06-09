@@ -1,0 +1,25 @@
+@startuml
+class Character {
+    - name: string
+    + DoAction(): int
+    + TakeDamage(int): void
+    + IsAlive(): bool
+
+}
+
+class Warrior {
+    +HeavySwing(): int
+}
+
+class Mage {
+    +FireBall(): int
+}
+
+class Paladin {
+    +Headl(): int
+}
+
+Character <|-- Warrior
+Character <|-- Mage
+Warrior <|-- Paladin
+@enduml
