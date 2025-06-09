@@ -16,7 +16,9 @@ try
             new Name("MyMage"),
             new HitPoints(45),
             new Strength(45),
-            new Defence(44)
+            new Defence(44),
+            new ManaPoints(76),
+            new Damage(55) //fire ball damage
     );
 
     Warrior warrior = new Warrior(
