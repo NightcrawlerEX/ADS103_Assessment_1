@@ -1,6 +1,10 @@
 @startuml
 class Character {
     - name: string
+    - hitPoints: int
+    - strength: int
+    - defence: int
+
     + DoAction(): int
     + TakeDamage(int): void
     + IsAlive(): bool
@@ -8,14 +12,18 @@ class Character {
 }
 
 class Warrior {
+    - ragePoints: int
     +HeavySwing(): int
 }
 
 class Mage {
+    - manaPoints: int
+    - fireballDamage: int
     +FireBall(): int
 }
 
 class Paladin {
+     - healAmount: int
     +Heal(): int
 }
 
