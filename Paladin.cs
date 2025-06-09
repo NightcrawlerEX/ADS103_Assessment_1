@@ -1,9 +1,11 @@
 public class Paladin : Warrior
 {
-    public Paladin(Name name, HitPoints hitPoints, Strength strength, Defence defence, RagePoints ragePoints) 
+    Damage _healAmount;
+    public Paladin(Name name, HitPoints hitPoints, Strength strength, Defence defence,
+    RagePoints ragePoints, Damage healAmount)
     : base(name, hitPoints, strength, defence, ragePoints)
     {
-
+        _healAmount = healAmount;
     }//end constructor
 
     public int Heal()

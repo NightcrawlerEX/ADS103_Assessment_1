@@ -3,6 +3,10 @@
 /// write a bunch of validation logic throughout the app.
 /// Value objects in this project are simple with no operator overrides and are intended to be
 /// recreated if you wish to change a value
+/// 
+/// 
+/// Damage deals with the case of positive damage and negative damage (heal)
+/// 
 /// </summary>
 public class Damage
 {
@@ -24,8 +28,11 @@ public class Damage
     /// <exception cref="Exception">the error exception</exception>
     private void Validate()
     {
-        if (_value < 1) throw new Exception("Damage must be larger than zero");
+        //if (_value < 1) throw new Exception("Damage must be larger than zero");
         //if (_value > 500) throw new Exception("Cannot have more than 500 Damage");
+
+        //Damage is extended to be able to heal also
+        if (_value < 500) _value = -500;//truncate heal at 500
         if (_value > 500) _value = 500;//truncate damage at 500
     }//end valudate
 
