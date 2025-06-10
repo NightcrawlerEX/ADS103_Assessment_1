@@ -8,4 +8,11 @@ public static class Logger
     {
         Console.WriteLine(message);
     }//end Log
+
+    public static void LogError(string message, Exception ex)
+    {
+        Console.WriteLine("**********************************");
+        Console.WriteLine(message);
+        Console.WriteLine("**********************************");
+    }//end LogError
 }//end class

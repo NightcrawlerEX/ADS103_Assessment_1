@@ -1,6 +1,6 @@
-﻿Console.WriteLine("=============================================");
-Console.WriteLine("============ ADS103 Assessment 1 ============");
-Console.WriteLine("=============================================");
+﻿Logger.Log("=============================================");
+Logger.Log("============ ADS103 Assessment 1 ============");
+Logger.Log("=============================================");
 
 try
 {
@@ -42,7 +42,7 @@ try
 }
 catch (Exception ex)
 {
-    Console.WriteLine(ex.Message);
+    Logger.LogError(ex.Message, ex);
 }
 
 

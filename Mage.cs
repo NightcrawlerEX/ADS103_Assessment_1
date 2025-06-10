@@ -1,7 +1,19 @@
 public class Mage : Character
 {
-    private ManaPoints _manaPoints;
-    private Damage _fireBallDamage;
+    private ManaPoints _manaPoints; //mage specific attribute
+    private Damage _fireBallDamage; //damage done by the mage's special attack
+    private int _fireBallCost = 10;//the cost in MP to use the fireball special move
+    private int _manaPointsIncreasePerTurn = 5;//the number of MP that increase per turn 
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    /// <param name="name">the name of the mage</param>
+    /// <param name="hitPoints">number of hit points the mage starts with</param>
+    /// <param name="strength">strength of the mage</param>
+    /// <param name="defence">defence of the mage</param>
+    /// <param name="manaPoints">mage specific attribute. MP</param>
+    /// <param name="fireBallDamage">the damage done by the mage's special move</param>
     public Mage(Name name, HitPoints hitPoints, Strength strength, Defence defence,
     ManaPoints manaPoints, Damage fireBallDamage)
     : base(name, hitPoints, strength, defence)
@@ -10,8 +22,43 @@ public class Mage : Character
         _fireBallDamage = fireBallDamage;
     }//end constructor
 
+    /// <summary>
+    /// Mage special attack
+    /// </summary>
+    /// <returns>the damage done by this special attack</returns>
     public int FireBall()
     {
-        return 0;
-    }
+        Logger.Log($"Mage {Name} uses Fireball");
+        return _fireBallDamage.Value;
+    }//end FireBall
+
+    /// <summary>
+    /// Method that is called on base class "Character" to do action related to Mage
+    /// If manaPoints greater than 10
+    ///     Use FireBall and return its damage amount 
+    /// else
+    ///     Return strength (default attack damage)
+    /// </summary>
+    /// <returns>the damage done by the action</returns>
+    public override int DoAction()
+    {
+        if (_manaPoints.Value > _fireBallCost)
+        {
+            //reduce rage points by cost of heavy swing
+            int manaPoints = _manaPoints.Value;
+            manaPoints -= _fireBallCost;
+            _manaPoints = new ManaPoints(manaPoints);
+
+            //perform the FireBall move
+            return FireBall();
+        }
+        else //not enough MP to perform fireball
+        {
+            int manaPoints = _manaPoints.Value;
+            manaPoints += _manaPointsIncreasePerTurn;
+            _manaPoints = new ManaPoints(manaPoints);
+            return Strength.Value;//do normal attack
+        }
+    }//end DoAction
+
 }//end class
