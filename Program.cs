@@ -5,12 +5,12 @@ Console.WriteLine("=============================================");
 try
 {
     //Should not be able to instantiate this later
-    Character testChar = new Character(
+    /*Character testChar = new Character(
             new Name("Jeff"),
             new HitPoints(85),
             new Strength(65),
             new Defence(43)
-        );
+        );*/
 
     Mage myMage = new Mage(
             new Name("MyMage"),
@@ -34,7 +34,8 @@ try
             new HitPoints(35),
             new Strength(35),
             new Defence(34),
-            new RagePoints(76)
+            new RagePoints(76),
+            new Damage(44) //heal amount
     );
 
 
