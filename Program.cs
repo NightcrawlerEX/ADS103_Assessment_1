@@ -1,4 +1,10 @@
 ﻿
+/*
+// This file is the main file for the Assessment 1 Task
+//
+//
+//
+*/
 
 Logger.Log("=============================================");
 Logger.Log("============ ADS103 Assessment 1 ============");
@@ -66,13 +72,14 @@ try
                 Logger.Log(battleParticipants[1].ToString());
 
 
-                if (defender.HitPoints.Value == 0)
+                if (defender.IsAlive() == false)
                 {
                         Logger.Log($"{defender.Name.Value}'s HP is zero");
                         Logger.Log($"{defender.Name.Value} looses the battle");
                         bIsBattleFinished = true;
                 }
                 Logger.Log("");
+                Thread.Sleep(3000);
         }//end while
          //if we get here the battle has ended
         Character winner = battleParticipants[i % 2];

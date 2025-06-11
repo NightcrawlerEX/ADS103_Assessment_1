@@ -1,9 +1,21 @@
+/*
+// File created by
+// Student Number: A00125081
+// Student Name: James Simpson
+// To view the commit history and the source code go to
+// https://github.com/NightcrawlerEX/ADS103_Assessment_1
+*/
+
+/// <summary>
+/// Character is the base class for all characters in the game. It contains common attributes
+/// like HP, Strength, and Defence
+/// </summary>
 public abstract class Character
 {
     private Name _name;
-    private HitPoints _hitPoints;
-    private Strength _strength;
-    private Defence _defence;
+    private HitPoints _hitPoints;//Characters Health
+    private Strength _strength;//Strength is basic attack damage
+    private Defence _defence;//Defence is subtracted from enemy's strength to calculate damage
 
     /// <summary>
     /// Constructor to initialize characcter
