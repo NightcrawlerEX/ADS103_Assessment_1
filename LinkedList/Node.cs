@@ -6,6 +6,13 @@
 // https://github.com/NightcrawlerEX/ADS103_Assessment_1
 */
 
+/// <summary>
+/// Node is a single node in the linked list. It contains an integer to hold some data and a
+/// reference to the next node in the linked list. We need to make the next reference nullable
+/// so that we can deal with the last node which has nothing.
+/// 
+/// The members are public for ease of use
+/// </summary>
 internal class Node
 {
     public int Data { get; set; }//bit of data
