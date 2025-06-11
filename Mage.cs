@@ -61,4 +61,20 @@ public class Mage : Character
         }
     }//end DoAction
 
+    /// <summary>
+    /// For logging. When ToString is called on character object it in turn calls
+    /// this virtual function and appends the text to the output
+    /// </summary>
+    /// <returns>the name of the class</returns>
+    protected override string GetCharacterTypeString() => "Mage";
+
+    /// <summary>
+    /// For logging. Appends the implementation specific stats to the output of the base
+    /// stats from the Character class
+    /// </summary>
+    /// <returns></returns>
+    public override string ToString()
+    {
+        return base.ToString() + $"MP: {_manaPoints}";
+    }
 }//end class

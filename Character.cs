@@ -49,15 +49,15 @@ public abstract class Character
     }//end TakeDamage
 
     /// <summary>
-    /// Heal is the inverse of take damage
+    /// RemoveDamage is the inverse of take damage. Used for healing
     /// </summary>
     /// <param name="healAmount"></param>
-    public void Heal(int healAmount)
+    public void RemoveDamage(int healAmount)
     {
         int hitPoints = _hitPoints.Value;
         hitPoints -= healAmount;
         _hitPoints = new HitPoints(hitPoints);
-    }//end class
+    }//end RemoveDamage
 
     /// <summary>
     /// This method tests if the character is alive
@@ -88,4 +88,26 @@ public abstract class Character
     /// Getter for the Defence
     /// </summary>
     public Defence Defence => _defence;
+
+    /// <summary>
+    /// Returns the character type
+    /// </summary>
+    /// <returns>the character type in string format e.g. "Warrior"</returns>
+    protected abstract string GetCharacterTypeString();
+
+    /// <summary>
+    /// Override of ToString to output character information. This is useful for logging
+    /// This function must be called from an implemented classes ToString function
+    /// </summary>
+    /// <returns>the character information in string form</returns>
+    public override string ToString()
+    {
+        string output = $"Type: {this.GetCharacterTypeString()}"; //get implementation specific type
+        //add character base stats
+        output += $"\nName: {Name}\n";
+        output += $"HP: {HitPoints}\n";
+        output += $"Strength: {Strength}\n";
+        output += $"Defence: {Defence}\n";
+        return output;
+    }//end ToString
 }//end class

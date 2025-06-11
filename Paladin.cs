@@ -25,10 +25,8 @@ public class Paladin : Warrior
     /// <returns>the amount to heal</returns>
     public int Heal()
     {
+
         Logger.Log($"Paladin {Name} uses Heal");
-
-
-        make the paladin heal here
         return _healAmount.Value;
     }//end Heal
 
@@ -50,7 +48,8 @@ public class Paladin : Warrior
             _ragePoints = new RagePoints(ragePoints);
 
             //perform the healing move
-            Heal();
+            int amountToHeal = Heal();
+            RemoveDamage(amountToHeal);
         }
         else //not enough rage points to do heavy swing
         {
@@ -60,4 +59,13 @@ public class Paladin : Warrior
 
         return 0; //healing Paladin should return zero damage from the DoAction method. 
     }//end DoAction
+
+
+    /// <summary>
+    /// For logging. When ToString is called on character object it in turn calls
+    /// this virtual function and appends the text to the output
+    /// </summary>
+    /// <returns>the name of the class</returns>
+    protected override string GetCharacterTypeString() => "Paladin";
+
 }//end class

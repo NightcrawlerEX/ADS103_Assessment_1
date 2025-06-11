@@ -64,4 +64,25 @@ public class Warrior : Character
             return Strength.Value;//do normal attack
         }
     }//end DoAction
+
+    /// <summary>
+    /// /// <summary>
+    /// For logging. When ToString is called on character object it in turn calls
+    /// this virtual function and appends the text to the output
+    /// </summary>
+    /// <returns>the name of the class</returns>
+    /// </summary>
+    /// <returns></returns>
+    protected override string GetCharacterTypeString() => "Warrior";
+
+
+    /// <summary>
+    /// For logging. Appends the implementation specific stats to the output of the base
+    /// stats from the Character class
+    /// </summary>
+    /// <returns></returns>
+    public override string ToString()
+    {
+        return base.ToString() + $"Rage Points: {_ragePoints}";
+    }
 }//end class
