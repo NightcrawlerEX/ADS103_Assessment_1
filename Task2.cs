@@ -9,7 +9,7 @@
 /// <summary>
 /// This class contains the logic related to Task 2
 /// </summary>
-public class Task2
+internal class Task2
 {
 
 }//end

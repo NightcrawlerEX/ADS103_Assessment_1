@@ -1,4 +1,4 @@
-public class Mage : Character
+internal class Mage : Character
 {
     private ManaPoints _manaPoints; //mage specific attribute
     private Damage _fireBallDamage; //damage done by the mage's special attack

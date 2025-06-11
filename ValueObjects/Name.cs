@@ -4,7 +4,7 @@
 /// Value objects in this project are simple with no operator overrides and are intended to be
 /// recreated if you wish to change a value
 /// </summary>
-public class Name
+internal class Name
 {
     private string _value;
 

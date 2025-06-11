@@ -10,7 +10,7 @@
 /// Character is the base class for all characters in the game. It contains common attributes
 /// like HP, Strength, and Defence
 /// </summary>
-public abstract class Character
+internal abstract class Character
 {
     private Name _name;
     private HitPoints _hitPoints;//Characters Health

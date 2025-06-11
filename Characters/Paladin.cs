@@ -1,4 +1,4 @@
-public class Paladin : Warrior
+internal class Paladin : Warrior
 {
     Damage _healAmount; //the amount to heal when using special attack
     int _healingCost = 10; //the cost in rage points to heal

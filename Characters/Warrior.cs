@@ -2,7 +2,7 @@
 /// Warrior is an implementation of base class "Character"
 /// Warrior class defines a specific "Warrior" character.
 /// </summary>
-public class Warrior : Character
+internal class Warrior : Character
 {
     protected RagePoints _ragePoints; //The warriors rage points. Specific to warrior type
     private int _heavySwingMultiplier = 2;//Heavy swing damage multiplier

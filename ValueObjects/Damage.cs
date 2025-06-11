@@ -8,7 +8,7 @@
 /// Damage deals with the case of positive damage and negative damage (heal)
 /// 
 /// </summary>
-public class Damage
+internal class Damage
 {
     private int _value;
 
