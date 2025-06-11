@@ -11,6 +11,8 @@
 /// write a bunch of validation logic throughout the app.
 /// Value objects in this project are simple with no operator overrides and are intended to be
 /// recreated if you wish to change a value
+/// 
+/// Mana points are used by the Paladin class. They are the "Energy" used for its special move
 /// </summary>
 internal class ManaPoints
 {

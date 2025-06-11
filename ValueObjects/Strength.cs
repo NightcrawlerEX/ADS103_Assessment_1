@@ -11,6 +11,8 @@
 /// write a bunch of validation logic throughout the app.
 /// Value objects in this project are simple with no operator overrides and are intended to be
 /// recreated if you wish to change a value
+/// 
+/// Strength is the power of the characters normal (non-special) attack
 /// </summary>
 internal class Strength
 {
