@@ -30,9 +30,19 @@ public class Warrior : Character
     /// <returns>the damage from the heavy swing attack</returns>
     public int HeavySwing()
     {
-        Logger.Log($"Warrior {Name} uses Heavy Swing");
+        Logger.Log($"Warrior {Name.Value} uses Heavy Swing");
         return _heavySwingMultiplier * Strength.Value;
     }//end HeavySwing
+
+    /// <summary>
+    /// Attack is used when the special attack is not
+    /// </summary>
+    /// <returns></returns>
+    public int Attack()
+    {
+        Logger.Log($"Warrior {Name.Value} Attacks");
+        return Strength.Value;
+    }//end Attack
 
     /// <summary>
     /// Method that is called on base class "Character" to do action related to warrior
@@ -61,7 +71,8 @@ public class Warrior : Character
         {
             int ragePoints = _ragePoints.Value;
             ragePoints += _ragePointsIncreasePerTurn;
-            return Strength.Value;//do normal attack
+            Logger.Log($"{Name.Value} rage points increased by {_ragePointsIncreasePerTurn}");
+            return Attack();//do normal attack
         }
     }//end DoAction
 
@@ -83,6 +94,6 @@ public class Warrior : Character
     /// <returns></returns>
     public override string ToString()
     {
-        return base.ToString() + $"Rage Points: {_ragePoints}";
+        return base.ToString() + $", Rage Points: {_ragePoints.Value}";
     }
 }//end class

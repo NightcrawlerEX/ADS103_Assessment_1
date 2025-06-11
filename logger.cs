@@ -11,7 +11,7 @@ public static class Logger
 
     public static void LogError(string message, Exception ex)
     {
-        Console.WriteLine("**********************************");
+        Console.WriteLine("************ Error ***************");
         Console.WriteLine(message);
         Console.WriteLine("**********************************");
     }//end LogError

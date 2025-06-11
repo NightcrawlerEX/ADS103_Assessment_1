@@ -26,7 +26,7 @@ public class Paladin : Warrior
     public int Heal()
     {
 
-        Logger.Log($"Paladin {Name} uses Heal");
+        Logger.Log($"Paladin {Name.Value} uses Heal");
         return _healAmount.Value;
     }//end Heal
 
@@ -55,6 +55,8 @@ public class Paladin : Warrior
         {
             int ragePoints = _ragePoints.Value;
             ragePoints += _ragePointsIncreasePerTurn;
+            _ragePoints = new RagePoints(ragePoints);
+            Logger.Log($"{Name.Value} rage points increased by {_ragePointsIncreasePerTurn}");
         }
 
         return 0; //healing Paladin should return zero damage from the DoAction method. 

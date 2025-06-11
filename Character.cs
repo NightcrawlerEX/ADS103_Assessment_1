@@ -43,6 +43,7 @@ public abstract class Character
         int hitPoints = this._hitPoints.Value - damage; //and subtract the result from hitPoints
         if (hitPoints < 1) hitPoints = 0; //Make negative HP not a thing
 
+        Logger.Log($"{Name.Value} takes {damage} damage");
         //create new hitpoints value object
         HitPoints newHitPoints = new HitPoints(hitPoints);//will throw exception if not correct value
         this._hitPoints = newHitPoints;
@@ -55,7 +56,8 @@ public abstract class Character
     public void RemoveDamage(int healAmount)
     {
         int hitPoints = _hitPoints.Value;
-        hitPoints -= healAmount;
+        hitPoints += healAmount;
+        Logger.Log($"{Name.Value} is healed by {healAmount}");
         _hitPoints = new HitPoints(hitPoints);
     }//end RemoveDamage
 
@@ -102,12 +104,12 @@ public abstract class Character
     /// <returns>the character information in string form</returns>
     public override string ToString()
     {
-        string output = $"Type: {this.GetCharacterTypeString()}"; //get implementation specific type
+        string output = $"Type: {this.GetCharacterTypeString()}, "; //get implementation specific type
         //add character base stats
-        output += $"\nName: {Name}\n";
-        output += $"HP: {HitPoints}\n";
-        output += $"Strength: {Strength}\n";
-        output += $"Defence: {Defence}\n";
+        output += $"Name: {_name.Value}, ";
+        output += $"HP: {_hitPoints.Value}, ";
+        output += $"Strength: {_strength.Value}, ";
+        output += $"Defence: {_defence.Value}";
         return output;
     }//end ToString
 }//end class

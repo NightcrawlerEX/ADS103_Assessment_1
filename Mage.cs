@@ -20,6 +20,7 @@ public class Mage : Character
     {
         _manaPoints = manaPoints;
         _fireBallDamage = fireBallDamage;
+        Logger.Log($"{fireBallDamage.Value}");
     }//end constructor
 
     /// <summary>
@@ -28,9 +29,20 @@ public class Mage : Character
     /// <returns>the damage done by this special attack</returns>
     public int FireBall()
     {
-        Logger.Log($"Mage {Name} uses Fireball");
+        Logger.Log($"Mage {Name.Value} uses Fireball");
+        Logger.Log($"Fireball damage {_fireBallDamage.Value}");
         return _fireBallDamage.Value;
     }//end FireBall
+
+    /// <summary>
+    /// Attack is used when the special attack is not
+    /// </summary>
+    /// <returns></returns>
+    public int Attack()
+    {
+        Logger.Log($"Mage {Name.Value} Attacks");
+        return Strength.Value;
+    }//end Attack
 
     /// <summary>
     /// Method that is called on base class "Character" to do action related to Mage
@@ -57,7 +69,8 @@ public class Mage : Character
             int manaPoints = _manaPoints.Value;
             manaPoints += _manaPointsIncreasePerTurn;
             _manaPoints = new ManaPoints(manaPoints);
-            return Strength.Value;//do normal attack
+            Logger.Log($"{Name.Value} mana points increased by {_manaPointsIncreasePerTurn}");
+            return Attack();//do normal attack
         }
     }//end DoAction
 
@@ -75,6 +88,6 @@ public class Mage : Character
     /// <returns></returns>
     public override string ToString()
     {
-        return base.ToString() + $"MP: {_manaPoints}";
+        return base.ToString() + $", MP: {_manaPoints.Value}";
     }
 }//end class

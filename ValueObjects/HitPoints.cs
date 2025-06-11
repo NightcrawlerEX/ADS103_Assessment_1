@@ -24,7 +24,7 @@ public class HitPoints
     /// <exception cref="Exception">the error exception</exception>
     private void Validate()
     {
-        if (_value < 1) throw new Exception("Hit points must be larger than zero");
+        if (_value < 0) throw new Exception("Hit points must be larger or equal to zero");
         //if (_value > 100) throw new Exception("Cannot have more than 100 Hit Points");
         //removed max value for hit points as it is not specified in any crieria given
         //this allows the paladin to have more than 100 hit points

@@ -32,7 +32,7 @@ public class Damage
         //if (_value > 500) throw new Exception("Cannot have more than 500 Damage");
 
         //Damage is extended to be able to heal also
-        if (_value < 500) _value = -500;//truncate heal at 500
+        if (_value < -500) _value = -500;//truncate heal at 500
         if (_value > 500) _value = 500;//truncate damage at 500
     }//end valudate
 
