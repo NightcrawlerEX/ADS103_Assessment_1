@@ -8,6 +8,9 @@
 
 /// <summary>
 /// This class contains the logic related to Task 2
+/// The task is:
+/// Write your own custom LinkedList class and a program to create and run a variety of performance 
+/// tests on LinkedList objects
 /// </summary>
 internal class Task2
 {

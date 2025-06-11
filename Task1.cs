@@ -9,6 +9,7 @@
 
 /// <summary>
 /// This class contains the logic related to Task 1
+/// This first program will simulate a battle between Role Playing Game (RPG) characters
 /// This is a battle game with classes Mage, Warrior, and Paladin
 /// </summary>
 internal class Task1
