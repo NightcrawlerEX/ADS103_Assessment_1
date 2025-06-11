@@ -1,3 +1,19 @@
+/*
+// File created by
+// Student Number: A00125081
+// Student Name: James Simpson
+// To view the commit history and the source code go to
+// https://github.com/NightcrawlerEX/ADS103_Assessment_1
+*/
+
+/// <summary>
+/// This class defines the character type "Paladin". Paladin is derived from warrior which is
+/// an implementation of the character class
+/// 
+/// Note: Paladin at this time does not do any damage from attacks (as was specified) but the
+/// minimum damage done is 1 (as specified) so the paladin just removes 1HP from enemies every
+/// turn which is a bit weird
+/// </summary>
 internal class Paladin : Warrior
 {
     Damage _healAmount; //the amount to heal when using special attack

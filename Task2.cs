@@ -11,5 +11,13 @@
 /// </summary>
 internal class Task2
 {
+    public Task2()
+    {
 
+    }//end constructor
+
+    public void Run()
+    {
+
+    }//end Run  
 }//end
