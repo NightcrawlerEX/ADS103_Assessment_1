@@ -18,9 +18,30 @@ internal class Task2
     {
 
     }//end constructor
+    
+    /// <summary>
+    /// Function to make sure things are adding to the list correctly
+    /// </summary>
+    private void RunTestCase()
+    {
+        LinkedList test = new LinkedList(new Node(1));
+        test.PushBack(new Node(2));
+        test.PushBack(new Node(3));
+        test.PushBack(new Node(4));
+        test.PushBack(new Node(5));
+        test.PushBack(new Node(6));
+        test.PushBack(new Node(7));
+        test.PushBack(new Node(8));
+        test.Print();
+        test.PushFront(new Node(41));
+        test.PushFront(new Node(42));
+        test.PushFront(new Node(43));
+        test.PushFront(new Node(44));
+        test.Print();
+    }//end RunTestCase
 
     public void Run()
     {
 
-    }//end Run  
+    }//end Run
 }//end

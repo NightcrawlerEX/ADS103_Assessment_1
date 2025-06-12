@@ -18,8 +18,8 @@ Logger.Log("================== Task 1 ===================");
 Logger.Log("=============================================");
 try
 {
-        Task1 task1 = new Task1();//initialize the characters
-        task1.Run();//run the battle        
+        //Task1 task1 = new Task1();//initialize the characters
+        //task1.Run();//run the battle        
 }
 catch (Exception ex)
 {

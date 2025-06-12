@@ -6,6 +6,8 @@
 // https://github.com/NightcrawlerEX/ADS103_Assessment_1
 */
 
+using System.Diagnostics.Contracts;
+
 /// <summary>
 /// Node is a single node in the linked list. It contains an integer to hold some data and a
 /// reference to the next node in the linked list. We need to make the next reference nullable
@@ -26,4 +28,21 @@ internal class Node
         Data = data;
         Next = next;
     }//end Constructor
+
+    /// <summary>
+    /// recursive call to print the node from start to finish
+    /// </summary>
+    public void Print()
+    {
+        Console.Write(Data.ToString());
+        if (Next != null)
+        {
+            Console.Write(",");
+            Next.Print();
+        }
+        else//is the last node
+        {
+            Console.Write("}\n");
+        }
+    }//end Print
 }//end class
