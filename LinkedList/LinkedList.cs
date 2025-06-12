@@ -5,3 +5,7 @@
 // To view the commit history and the source code go to
 // https://github.com/NightcrawlerEX/ADS103_Assessment_1
 */
+internal class LinkedList
+{
+    
+}//end class
