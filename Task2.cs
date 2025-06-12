@@ -42,6 +42,6 @@ internal class Task2
 
     public void Run()
     {
-
+        RunTestCase();
     }//end Run
 }//end
