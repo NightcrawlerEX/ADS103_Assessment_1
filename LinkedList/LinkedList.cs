@@ -13,7 +13,7 @@ internal class LinkedList
     /// Constructor
     /// </summary>
     /// <param name="node">the first node to add</param>
-    public LinkedList(Node node)
+    public LinkedList(/*Node node*/)
     {
         /*//first node is the start and end of the list (its the only one)
         _root = node;
@@ -59,6 +59,65 @@ internal class LinkedList
             _endNode = node;
         }
     }//end PushBack
+
+    /// <summary>
+    /// Deletes the node at the front of the linked list
+    /// Note that this will just remove the node from the list and its up to the garbage
+    /// collection to actually delete the node. If you have a reference to the node somewhere
+    /// else it will not be deleted
+    /// </summary>
+    public void DeleteFront()
+    {
+        //here we just remove the root node. There are no other references to it
+        if (_root == null) return;
+        if (_root.Next != null)
+        {
+            _root = _root.Next;
+        }
+        else
+        {
+            _root = null;
+            _endNode = null;
+        }
+    }//end DeleteFront
+
+    /// <summary>
+    /// Will check to see if there are any nodes left in the list
+    /// </summary>
+    /// <returns>true if nodes exist. false otherwise</returns>
+    public bool HasNodes()
+    {
+        if(_root != null) return true;
+        else return false;
+    }
+
+    /// <summary>
+    /// Deletes the node at the back of the linked list
+    /// Note that this will just remove the node from the list and its up to the garbage
+    /// collection to actually delete the node. If you have a reference to the node somewhere
+    /// else it will not be deleted
+    /// </summary>
+    public void DeleteBack()
+    {
+        if(_root == null) return;
+        if (_endNode == null) return;
+        if (_root == _endNode)
+        {
+            // Only one node in the list
+            _root = null;
+            _endNode = null;
+            return;
+        }
+        // More than one node so find the second last node
+        Node current = _root;
+        while (current.Next != _endNode)
+        {
+            current = current.Next;
+        }
+        // drop the last node
+        current.Next = null;
+        _endNode = current;
+    }//end DeleteBack
 
     /// <summary>
     /// Prints the linked list
